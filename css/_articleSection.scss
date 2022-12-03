@@ -1,0 +1,7 @@
+@use "./shared" as *;
+
+section#articleSection {
+    .container{  
+        @include section_padding;
+    }
+}

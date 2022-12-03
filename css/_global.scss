@@ -1,0 +1,110 @@
+@use "./mixin" as *;
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=Neucha&display=swap");
+
+$main-color: #2196f3;
+$bg-color: #ececec;
+
+
+@include coloring_heading_animation(coloringLeftHeading,left);
+@include coloring_heading_animation(coloringRightHeading,right);
+
+*{
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Cairo", sans-serif;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: auto;
+
+    // Small devices (landscape phones, 576px and up)
+    // @media (min-width: 576.02px) {
+    //     max-width: 540px;
+    // }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768.02px) {
+        max-width: 720px;
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992.02px) {
+        max-width: 960px;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200.02px) {
+        max-width: 1140px;
+    }
+
+    // @media (min-width: 1400.02px) {
+    //     max-width: 1320px;
+    // }
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+.section-heading {
+    h1 {
+        position: relative;
+        text-transform: uppercase;
+        padding: 10px 30px;
+        border: 2px solid #000;
+        width: fit-content;
+        text-align: center;
+        margin: auto;
+        transition: all 0.5s;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -25px;
+            transform: translate(0, -50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: $main-color;
+            z-index: -1;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -25px;
+            transform: translate(0, -50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: $main-color;
+            z-index: -1;
+        }
+    }
+    h1:hover {
+        color: #fff;
+        &::before {
+            animation: coloringLeftHeading 0.5s ease-in-out;
+            animation-fill-mode: both;
+        }
+        &::after {
+            animation: coloringRightHeading 0.5s ease-in-out;
+            animation-fill-mode: both;
+        }
+    }
+}
+
+
+
+

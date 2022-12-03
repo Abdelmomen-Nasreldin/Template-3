@@ -1,0 +1,45 @@
+
+
+@mixin section_padding ($bigScreenPadding: 100px, $smallScreenPadding: calc($bigScreenPadding / 2)){
+    padding-top: $bigScreenPadding;
+    padding-bottom: $bigScreenPadding;
+    @media (max-width: 768px) {
+        padding-top: $smallScreenPadding;
+        padding-bottom: $smallScreenPadding;
+    }
+}
+@mixin cutoff_text ($lines){
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+@mixin coloring_heading_animation ($animationName: coloringLeftHeading,$dir: left) {
+    @keyframes #{$animationName }{
+        0% {
+            #{$dir}: -25px;
+        }
+        30% {
+            #{$dir}: 0;
+            height: 100%;
+            width: 0;
+            border-radius: 0;
+        }
+        100% {
+            #{$dir}: 0%;
+            height: 100%;
+            width: 51%;
+            border-radius: 0;
+        }
+    }
+}
+@mixin up_down_animation ($animeName: arrowUpAndDown){
+    @keyframes #{$animeName} {
+        from {
+            bottom: 20px;
+        }
+        to {
+            bottom: 35px;
+        }
+    }
+}
