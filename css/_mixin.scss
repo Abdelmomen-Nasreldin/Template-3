@@ -8,7 +8,7 @@
         padding-bottom: $smallScreenPadding;
     }
 }
-@mixin cutoff_text ($lines){
+@mixin cutoff_text ($lines: 3){
     display: -webkit-box;
     -webkit-line-clamp: $lines;
     -webkit-box-orient: vertical;
