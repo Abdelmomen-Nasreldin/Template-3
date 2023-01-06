@@ -1,3 +1,6 @@
 # HTML / SCSS / JS / JSON.
-# WITHOUT any Frameworks
-    - Template 3 in Elzero Web School Channel but using the powerful of SCSS and JS.
+# WITHOUT Any Frameworks
+    - preview : https://momen-template3.netlify.app/
+    - Template 3 in Elzero Web School Channel With using the powerful of SCSS and JS.
+    - Fetching data from JSON file.
+    

@@ -1,0 +1,185 @@
+@use "./shared" as *;
+
+$gap: 30px;
+$first_color: #f44036;
+$second_color: #009688;
+$third_color: #03a9f4;
+#featuresSection {
+    .container {
+        @include section_padding;
+    }
+    .cards-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: $gap;
+        @media (width <= 992px) {
+            justify-content: center;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #ddd;
+            padding-bottom: 20px;
+            flex-basis: calc(33% - $gap);
+            @media (width <= 992px) {
+                flex-basis: calc(50% - $gap);
+            }
+            @media (width <= 575px) {
+                flex-basis: calc(100%);
+            }
+
+            .image {
+                position: relative;
+                isolation: isolate;
+                overflow: hidden;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: -1px;
+                    width: 100%;
+                    height: 100%;
+                    transition: 0.3s;
+                    clip-path: polygon(100% 70%, 0% 100%, 101% 100%);
+                    background: #fff;
+                    z-index: 1;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.5;
+                }
+            }
+            .content {
+                padding: 15px;
+                text-align: center;
+                h2 {
+                    font-size: 2.3em;
+                    font-weight: bolder;
+                    width: fit-content;
+                    margin: auto;
+                    position: relative;
+                    padding: 15px 0;
+                    margin-bottom: 25px;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 100%;
+                        left: 10%;
+                        width: 80%;
+                        height: 4px;
+                    }
+                }
+                p {
+                    @include cutoff_text;
+                    line-height: 1.8;
+                    font-size: 1.15em;
+                }
+            }
+            button {
+                padding: 10px 25px;
+                background: transparent;
+                border: 2px solid;
+                border-radius: 5px;
+                font-weight: bold;
+                font-size: 1.2em;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 0%;
+                    height: calc(100% - 1px);
+                    transition: 0.3s;
+                    z-index: -1;
+                }
+            }
+        }
+        .card:first-of-type {
+            .image {
+                &::after {
+                    background-color: $first_color;
+                }
+            }
+            .content {
+                h2 {
+                    &::after {
+                        background-color: $first_color;
+                    }
+                }
+            }
+            button {
+                border-color: $first_color;
+                color: $first_color;
+                &::after {
+                    background-color: $first_color;
+                }
+            }
+        }
+        .card:nth-of-type(2) {
+            .image {
+                &::after {
+                    background-color: $second_color;
+                }
+            }
+            .content {
+                h2 {
+                    &::after {
+                        background-color: $second_color;
+                    }
+                }
+            }
+            button {
+                border-color: $second_color;
+                color: $second_color;
+                &::after {
+                    background-color: $second_color;
+                }
+            }
+        }
+        .card:nth-of-type(3) {
+            .image {
+                &::after {
+                    background-color: $third_color;
+                }
+            }
+            .content {
+                h2 {
+                    &::after {
+                        background-color: $third_color;
+                    }
+                }
+            }
+            button {
+                border-color: $third_color;
+                color: $third_color;
+                &::after {
+                    background-color: $third_color;
+                }
+            }
+        }
+        .card:hover {
+            .image {
+                &::before {
+                    clip-path: polygon(0 70%, 0 100%, 99% 100%);
+                }
+            }
+            button {
+                color: #fff;
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -53,7 +53,7 @@ function elementDataHandler(element, data){
     <div class="image">
         <img src="${data.src}" alt="card Image">
     </div>
-    <div>
+    <div class="wrapper">
         <div class="text">
             <h3>${data.title}</h3>
             <p>${data.text}</p>

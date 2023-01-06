@@ -37,7 +37,7 @@ section#articleSection {
     }
     .text {
         padding: 0px 15px 15px;
-        border-bottom: 1px solid #ddd;
+        
         h3 {
         }
         p {
@@ -45,6 +45,12 @@ section#articleSection {
             margin: 0;
             line-height: 1.5;
         }
+    }
+    .wrapper{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .read-more {
         width: 100%;
@@ -57,7 +63,7 @@ section#articleSection {
         font-weight: bold;
         color: $main-color;
         cursor: pointer;
-
+        border-top: 1px solid #ddd;
         span {
         }
         i {
