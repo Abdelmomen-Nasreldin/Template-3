@@ -4,6 +4,8 @@ $gap: 30px;
 $first_color: #f44036;
 $second_color: #009688;
 $third_color: #03a9f4;
+$duration : 0.3s;
+
 #featuresSection {
     .container {
         @include section_padding;
@@ -43,7 +45,7 @@ $third_color: #03a9f4;
                     bottom: -1px;
                     width: 100%;
                     height: 100%;
-                    transition: 0.3s;
+                    transition: $duration;
                     clip-path: polygon(100% 70%, 0% 100%, 101% 100%);
                     background: #fff;
                     z-index: 1;
@@ -61,7 +63,7 @@ $third_color: #03a9f4;
             .content {
                 padding: 15px;
                 text-align: center;
-                h2 {
+                h3 {
                     font-size: 2.3em;
                     font-weight: bolder;
                     width: fit-content;
@@ -100,7 +102,7 @@ $third_color: #03a9f4;
                     top: 0;
                     width: 0%;
                     height: calc(100% - 1px);
-                    transition: 0.3s;
+                    transition: $duration;
                     z-index: -1;
                 }
             }
@@ -112,7 +114,7 @@ $third_color: #03a9f4;
                 }
             }
             .content {
-                h2 {
+                h3 {
                     &::after {
                         background-color: $first_color;
                     }
@@ -133,7 +135,7 @@ $third_color: #03a9f4;
                 }
             }
             .content {
-                h2 {
+                h3 {
                     &::after {
                         background-color: $second_color;
                     }
@@ -154,7 +156,7 @@ $third_color: #03a9f4;
                 }
             }
             .content {
-                h2 {
+                h3 {
                     &::after {
                         background-color: $third_color;
                     }

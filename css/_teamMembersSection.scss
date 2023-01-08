@@ -1,0 +1,100 @@
+@use "./shared" as *;
+$gap: 30px;
+$color: #2196f3;
+$duration: 0.3s;
+
+#teamMembersSection {
+    isolation: isolate;
+    .container {
+        @include section_padding;
+    }
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 300px);
+        // grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+        gap: $gap;
+        justify-content: center;
+    }
+    .card {
+        display: flex;
+        justify-content: end;
+        transition: $duration;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    .wrapper {
+        position: relative;
+        isolation: isolate;
+        background-color: #f3f3f3;
+        padding: 60px 15px 15px;
+        border-radius: 15px;
+        width: calc(100% - 50px);
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0%;
+            height: 100%;
+            transition: $duration;
+            background: grayscale($color: $bg-color);
+            border-radius: 15px;
+            z-index: -1;
+        }
+    }
+    .card:hover {
+        .image {
+            filter: grayscale(1);
+        }
+        h3 {
+            color: #777;
+        }
+        .wrapper {
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+    .imageAndIcons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+    }
+    .social-media {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        i {
+            margin: 20px;
+            margin-right: 5px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .image {
+        border-radius: 10px;
+        overflow: hidden;
+        position: absolute;
+        left: -60px;
+        width: calc(100% + 20px);
+        max-height: 100%;
+    }
+    h3 {
+        color: $color;
+        font-size: 1.3em;
+        margin-bottom: 0;
+    }
+    p {
+        @include cutoff_text;
+        color: #000;
+    }
+    a {
+        color: #777;
+        &:hover {
+            i {
+                color: $color;
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "articleData" : [
+        {
+            "id":"1",
+            "imgSrc": "cat-01.jpg",
+            "title": "Test Title",
+            "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis ducimus consequatur nostrum blanditiis sequi quidem consequuntur deserunt dicta, laudantium explicabo accusamus nemo rem perferendis natus tenetur et? Sunt, velit quam?"
+        },
+        {
+            "id":"2",
+            "imgSrc": "cat-02.jpg",
+            "title": "Test Title",
+            "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis ducimus consequatur nostrum blanditiis sequi quidem consequuntur deserunt dicta, laudantium explicabo accusamus nemo rem perferendis natus tenetur et? Sunt, velit quam?"
+        },
+        {
+            "id":"3",
+            "imgSrc": "cat-03.jpg",
+            "title": "Test Title",
+            "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis ducimus consequatur nostrum blanditiis sequi quidem consequuntur deserunt dicta, laudantium explicabo accusamus nemo rem perferendis natus tenetur et? Sunt, velit quam?"
+        },
+        {
+            "id":"4",
+            "imgSrc": "cat-04.jpg",
+            "title": "Test Title",
+            "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis ducimus consequatur nostrum blanditiis sequi quidem consequuntur deserunt dicta, laudantium explicabo accusamus nemo rem perferendis natus tenetur et? Sunt, velit quam?"
+        },
+        {
+            "id":"5",
+            "imgSrc": "cat-05.jpg",
+            "title": "Test Title",
+            "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis ducimus consequatur nostrum blanditiis sequi quidem consequuntur deserunt dicta, laudantium explicabo accusamus nemo rem perferendis natus tenetur et? Sunt, velit quam?"
+        },
+        {
+            "id":"6",
+            "imgSrc": "cat-06.jpg",
+            "title": "Test Title",
+            "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis ducimus consequatur nostrum blanditiis sequi quidem consequuntur deserunt dicta, laudantium explicabo accusamus nemo rem perferendis natus tenetur et? Sunt, velit quam?"
+        },
+        {
+            "id":"7",
+            "imgSrc": "cat-07.jpg",
+            "title": "Test Title",
+            "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis ducimus consequatur nostrum blanditiis sequi quidem consequuntur deserunt dicta, laudantium explicabo accusamus nemo rem perferendis natus tenetur et? Sunt, velit quam?"
+        },
+        {
+            "id":"8",
+            "imgSrc": "cat-08.jpg",
+            "title": "Test Title",
+            "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis ducimus consequatur nostrum blanditiis sequi quidem consequuntur deserunt dicta, laudantium explicabo accusamus nemo rem perferendis natus tenetur et? Sunt, velit quam?"
+        }
+    ]
+}

@@ -4,11 +4,10 @@
 $main-color: #2196f3;
 $bg-color: #ececec;
 
+@include coloring_heading_animation(coloringLeftHeading, left);
+@include coloring_heading_animation(coloringRightHeading, right);
 
-@include coloring_heading_animation(coloringLeftHeading,left);
-@include coloring_heading_animation(coloringRightHeading,right);
-
-*{
+* {
     box-sizing: border-box;
 }
 html {
@@ -54,10 +53,10 @@ ul {
 a {
     text-decoration: none;
 }
-img{
+img {
     max-width: 100%;
 }
-p{
+p {
     color: #777;
 }
 .section-heading {
@@ -83,6 +82,9 @@ p{
             border-radius: 50%;
             background-color: $main-color;
             z-index: -1;
+            @media (width <= 575px) {
+                display: none;
+            }
         }
         &::after {
             content: "";
@@ -95,10 +97,16 @@ p{
             border-radius: 50%;
             background-color: $main-color;
             z-index: -1;
+            @media (width <= 575px) {
+                display: none;
+            }
         }
     }
     h1:hover {
         color: #fff;
+        @media (width <= 575px) {
+            background-color: $main-color;
+        }
         &::before {
             animation: coloringLeftHeading 0.5s ease-in-out;
             animation-fill-mode: both;
@@ -109,7 +117,3 @@ p{
         }
     }
 }
-
-
-
-

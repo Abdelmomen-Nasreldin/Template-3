@@ -1,0 +1,38 @@
+@use "./shared" as *;
+$gap: 40px;
+
+#testimonialsSection {
+    isolation: isolate;
+    background-color: $bg-color;
+    .container {
+        @include section_padding;
+    }
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+        gap: $gap;
+        margin-top: 75px;
+    }
+    .card {
+        position: relative;
+        background-color: #fff;
+        padding: 0 15px;
+    }
+    .image {
+        position: absolute;
+        right: -10px;
+        top: 0;
+        transform: translateY(-50%);
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 10px solid $bg-color;
+    }
+    p {
+        @include cutoff_text;
+    }
+    i {
+        color: #ffc107;
+    }
+}
