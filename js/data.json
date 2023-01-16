@@ -1,6 +1,6 @@
 [
     {
-        "articleData": [
+        "article": [
             {
                 "id": "1",
                 "imgSrc": "cat-01.jpg",
@@ -52,7 +52,7 @@
         ]
     },
     {
-        "galleriesData": [
+        "galleries": [
             {
                 "imgSrc": "gallery-01.png"
             },
@@ -74,7 +74,7 @@
         ]
     },
     {
-        "featuresData": [
+        "features": [
             {
                 "imgSrc": "features-01.jpg",
                 "title": "Quality"
@@ -90,7 +90,7 @@
         ]
     },
     {
-        "testimonialsData": [
+        "testimonials": [
             {
                 "imgSrc": "avatar-01.png",
                 "title": "Momen",
@@ -124,7 +124,7 @@
         ]
     },
     {
-        "teamMembersData": [
+        "teamMembers": [
             {
                 "imgSrc": "team-01.jpg",
                 "title": "Hady",

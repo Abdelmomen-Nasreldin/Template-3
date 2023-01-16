@@ -83,6 +83,14 @@ body {
   padding-right: 15px;
   padding-left: 15px;
   margin: auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+@media (max-width: 768px) {
+  .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 @media (min-width: 768.02px) {
   .container {
@@ -195,11 +203,19 @@ header {
   align-items: center;
 }
 header .container {
+  padding-top: 0;
+  padding-bottom: 0;
   position: relative;
   flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 768px) {
+  header .container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 header .logo {
   color: #2196f3;
@@ -222,7 +238,7 @@ header ul#mainNav li::before {
   position: absolute;
   top: 0;
   left: 0;
-  height: 4px;
+  height: 3px;
   width: 0;
   background-color: #2196f3;
   transition: all 0.5s;
@@ -919,4 +935,161 @@ section#articleSection .read-more i {
 }
 #teamMembersSection a:hover i {
   color: #2196f3;
+}
+
+#servicesSection {
+  background-color: #ececec;
+  position: relative;
+  isolation: isolate;
+}
+#servicesSection::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #ececec;
+  background-size: 30px;
+  background-repeat: repeat;
+  background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+}
+#servicesSection .container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+@media (max-width: 768px) {
+  #servicesSection .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+#servicesSection .cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  counter-reset: myCounter;
+}
+#servicesSection .card {
+  box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.13), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  transition: 0.3s;
+  background-color: #fff;
+  flex-basis: calc(33% - 30px);
+}
+@media (width <= 992px) {
+  #servicesSection .card {
+    flex-basis: calc(50% - 30px);
+  }
+}
+@media (width <= 575px) {
+  #servicesSection .card {
+    flex-basis: 100%;
+  }
+}
+#servicesSection .card::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  background-color: #2196f3;
+  transition: 0.3s;
+}
+#servicesSection .card .image {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+#servicesSection .card .image i {
+  font-size: 4rem;
+  color: #d5d5d5;
+}
+#servicesSection .card .image h2 {
+  color: #2196f3;
+}
+#servicesSection .card:hover {
+  transform: translateY(-10px);
+}
+#servicesSection .card:hover::before {
+  width: 100%;
+  left: 0%;
+}
+#servicesSection .content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  background: #f9f9f9;
+}
+#servicesSection .content::before {
+  content: "0" counter(myCounter);
+  counter-increment: myCounter;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100%;
+  padding-right: 10px;
+  font-size: 2em;
+  font-weight: 700;
+  background: #2196f3;
+  color: #fff;
+  -webkit-clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#servicesSection .content::after {
+  content: "";
+  position: absolute;
+  left: 70px;
+  top: 0;
+  width: 70px;
+  height: 100%;
+  -webkit-clip-path: polygon(20px 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+  clip-path: polygon(20px 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+  background-color: #d5d5d5;
+}
+#servicesSection p {
+  padding: 1rem;
+  margin: 0;
+  color: #2196f3;
+}
+
+#skillsSection {
+  position: relative;
+  isolation: isolate;
+}
+#skillsSection h3 {
+  position: relative;
+}
+#skillsSection h3::before {
+  content: attr(data-percent);
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2196f3;
+  background-color: #fff;
+  transition: 0.5s;
+  font-size: 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 2px 5px;
+}
+#skillsSection .progress-bar {
+  background: #EEEEEE;
+  width: 100%;
+  height: 30px;
+}
+#skillsSection .progress-value {
+  height: 100%;
+  width: 0%;
+  background-color: #2196f3;
+  transition: 0.5s;
 }/*# sourceMappingURL=index.css.map */

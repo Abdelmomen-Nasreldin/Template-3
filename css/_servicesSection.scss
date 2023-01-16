@@ -1,0 +1,128 @@
+@use "./shared" as *;
+$gap: 30px;
+$first_color: #d5d5d5;
+$duration: 0.3s;
+
+#servicesSection {
+    background-color: $bg-color;
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        background-color: #ececec;
+        background-size: 30px;
+        background-repeat: repeat;
+        background-image: linear-gradient(135deg, white 25%, transparent 25%),
+            linear-gradient(225deg, white 25%, transparent 25%);
+    }
+    .container {
+        @include section_padding;
+    }
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: $gap;
+        counter-reset: myCounter;
+    }
+    .card {
+        box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+        border-radius: 3px;
+        transition: $duration;
+        background-color: #fff;
+        flex-basis: calc(33% - $gap);
+        @media (width <= 992px) {
+            flex-basis: calc(50% - $gap);
+        }
+        @media (width <= 575px) {
+            flex-basis: 100%;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            width: 0%;
+            height: 3px;
+            background-color: $main-color;
+            transition: $duration;
+        }
+        .image {
+            text-align: center;
+            padding: 2rem 1rem 1rem;
+
+            i {
+                font-size: 4rem;
+                color: $first_color;
+            }
+            h2 {
+                color: $main-color;
+            }
+        }
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        &::before {
+            width: 100%;
+            left: 0%;
+        }
+    }
+    .content {
+        $beforePadding: 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        background: #f9f9f9;
+        &::before {
+            content: "0" counter(myCounter);
+            counter-increment: myCounter;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 100%;
+            padding-right: $beforePadding/2;
+            font-size: 2em;
+            font-weight: 700;
+            background: #2196f3;
+            color: #fff;
+            -webkit-clip-path: polygon(0 0, 100% 0, calc(100% - $beforePadding) 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, calc(100% - $beforePadding) 100%, 0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            left: calc(80px - $beforePadding/2);
+            top: 0;
+            width: 70px;
+            height: 100%;
+            -webkit-clip-path: polygon(
+                $beforePadding 0,
+                100% 0,
+                calc(100% - $beforePadding) 100%,
+                0 100%
+            );
+            clip-path: polygon(
+                $beforePadding 0,
+                100% 0,
+                calc(100% - $beforePadding) 100%,
+                0 100%
+            );
+            background-color: $first_color;
+        }
+    }
+    p {
+        padding: 1rem;
+        margin: 0;
+        color: $main-color;
+    }
+}

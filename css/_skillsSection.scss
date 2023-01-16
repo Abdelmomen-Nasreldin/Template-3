@@ -1,0 +1,47 @@
+@use "./shared" as *;
+$gap: 30px;
+$first_color: #d5d5d5;
+$duration: 0.5s;
+
+#skillsSection {
+    position: relative;
+    isolation: isolate;
+    .cards-container {
+    
+    }
+    .card {
+    }
+    h3{
+        position: relative;
+        &::before {
+            content: attr(data-percent);
+            position: absolute;
+            top: 0%;
+            right: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $main-color;
+            background-color: #fff;
+            transition: $duration;
+            font-size: .85rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-weight: bold;
+            padding: 2px 5px;
+        }
+    }
+    .progress-bar{
+        background: #EEEEEE;
+        width: 100%;
+        height: 30px;
+    }
+    .progress-value{
+        height: 100%;
+        width: 0%;
+        background-color:$main-color;
+        transition: $duration;
+       
+    }
+
+}

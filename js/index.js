@@ -39,11 +39,11 @@ const fetchFun = async () => {
         const featuresContainer = sectionContainerHandler("featuresSection")
         const testimonialsContainer = sectionContainerHandler("testimonialsSection")
         const teamMembersContainer = sectionContainerHandler("teamMembersSection")
-   
-        elementDataHandler(articleContainer, data[0].articleData);
-        elementDataHandler(featuresContainer, data[2].featuresData);
-        elementDataHandler(testimonialsContainer, data[3].testimonialsData);
-        elementDataHandler(teamMembersContainer, data[4].teamMembersData);
+
+        elementDataHandler(articleContainer, data[0].article);
+        elementDataHandler(featuresContainer, data[2].features);
+        elementDataHandler(testimonialsContainer, data[3].testimonials);
+        elementDataHandler(teamMembersContainer, data[4].teamMembers);
 
     } catch (err) {
         console.log("error: ", err.message);
@@ -82,3 +82,16 @@ function elementDataHandler(ParentElement, source) {
         ParentElement.append(card);
     }
 }
+
+
+// progressBarValues in skills section
+const skillsSection =document.querySelector("#skillsSection");
+const progressBarValues =document.querySelectorAll("#skillsSection .progress-value");
+const skills =document.querySelectorAll("#skillsSection h3");
+window.addEventListener('scroll', ()=>{
+    if (window.scrollY >= skillsSection.offsetTop - 100) {
+        for (let i = 0; i < skills.length; i++) {
+            progressBarValues[i].style.width = skills[i].dataset.percent;
+        } 
+    }
+})
