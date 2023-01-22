@@ -875,7 +875,7 @@ section#articleSection .read-more i {
 }
 #teamMembersSection .card {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   transition: 0.3s;
   border-radius: 15px;
   overflow: hidden;
@@ -1182,4 +1182,113 @@ section#articleSection .read-more i {
   height: 100%;
   left: 0;
   top: 0;
+}
+
+#eventSection .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+#eventSection .event-image {
+  flex-basis: calc(45% - 30px);
+  text-align: center;
+}
+@media (max-width: 992px) {
+  #eventSection .event-image {
+    flex-basis: 100%;
+  }
+  #eventSection .event-image img {
+    width: 550px;
+  }
+}
+#eventSection .event-content {
+  flex-basis: calc(55% - 30px);
+}
+@media (max-width: 992px) {
+  #eventSection .event-content {
+    flex-basis: 100%;
+  }
+}
+#eventSection .cards-container {
+  display: flex;
+  justify-content: center;
+}
+#eventSection .cards-container .card {
+  border: 1px solid #d4d4d4;
+  margin: 0 0.3em;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 60px;
+}
+#eventSection .cards-container .card h3 {
+  color: #2196f3;
+  margin: 0;
+  padding: 0.5em 0;
+  font-size: 2em;
+}
+#eventSection .cards-container .card p {
+  font-size: 0.8125em;
+  border-top: 1px solid #d4d4d4;
+  padding-top: 5px;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.5em;
+}
+#eventSection .event-text {
+  text-align: center;
+}
+#eventSection .event-text h2 {
+  font-size: 1.875em;
+  margin: 1.3em 0 0;
+}
+#eventSection .event-text p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 170%;
+  font-size: 1.15em;
+}
+#eventSection form {
+  background-color: #F6F5F5;
+  padding: 1.5em;
+  border-radius: 50px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 2em auto 0;
+  width: 600px;
+  max-width: 100%;
+}
+@media (max-width: 575px) {
+  #eventSection form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+#eventSection form input {
+  border-radius: 50px;
+  padding: 15px;
+  border: none;
+  flex: 1;
+}
+#eventSection form input:focus-visible {
+  outline: 1px solid #2196f3;
+}
+#eventSection form button {
+  border-radius: 50px;
+  padding: 15px;
+  border: none;
+  background-color: #2196f3;
+  color: #fff;
 }/*# sourceMappingURL=index.css.map */

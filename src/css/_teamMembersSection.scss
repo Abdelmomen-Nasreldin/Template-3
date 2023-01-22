@@ -17,7 +17,7 @@ $duration: 0.3s;
     }
     .card {
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         transition: $duration;
         border-radius: 15px;
         overflow: hidden;

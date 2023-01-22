@@ -1,4 +1,5 @@
 @use "./shared" as *;
+@use "sass:math";
 $gap: 30px;
 $first_color: #d5d5d5;
 $duration: 0.3s;
@@ -87,7 +88,7 @@ $duration: 0.3s;
             left: 0;
             width: 80px;
             height: 100%;
-            padding-right: $beforePadding/2;
+            padding-right: math.div($beforePadding, 2);
             font-size: 2em;
             font-weight: 700;
             background: #2196f3;
