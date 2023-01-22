@@ -1,3 +1,5 @@
+// import '../css/index.css';
+
 const toggleIcon = document.getElementById("icon");
 const mainNavList = document.getElementById("mainNav");
 const welcomeSection = document.getElementById("welcomeSection");
@@ -28,7 +30,7 @@ function hideNavMenu() {
 // fetching data ///////////////////////
 const fetchFun = async () => {
     try {
-        const response = await fetch("./js/data.json");
+        const response = await fetch("../../data.json");
 
         if (response.status !== 200) {
             throw new Error("can't fetch data.");
@@ -63,8 +65,8 @@ function elementDataHandler(ParentElement, source) {
     for (let obj of source) {
         const card = document.importNode(element.content, true);
         obj.imgSrc
-            ? (card.querySelector("img").src = `../img/${obj.imgSrc}`)
-            : (card.querySelector("img").src = "../img/welcome-image.png");
+            ? (card.querySelector("img").src = `./src/img/${obj.imgSrc}`)
+            : (card.querySelector("img").src = "./src/img/avatar-01.png");
 
         obj.id
             ? (card.querySelector(".card").id = obj.id)

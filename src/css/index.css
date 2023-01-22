@@ -141,6 +141,11 @@ p {
   margin: auto;
   transition: all 0.5s;
 }
+@media (max-width: 575px) {
+  .section-heading h1 {
+    font-size: 1.8em;
+  }
+}
 .section-heading h1::before {
   content: "";
   position: absolute;
@@ -223,6 +228,12 @@ header .logo {
   font-size: 2em;
   font-weight: 700;
   letter-spacing: 2px;
+}
+@media (max-width: 575px) {
+  header .logo {
+    font-size: 1.8em;
+    letter-spacing: 0;
+  }
 }
 header ul#mainNav {
   display: flex;
@@ -707,6 +718,11 @@ section#articleSection .read-more i {
   padding: 15px 0;
   margin-bottom: 25px;
 }
+@media (max-width: 575px) {
+  #featuresSection .cards-container .card .content h3 {
+    font-size: 1.7em;
+  }
+}
 #featuresSection .cards-container .card .content h3::after {
   content: "";
   position: absolute;
@@ -1092,4 +1108,78 @@ section#articleSection .read-more i {
   width: 0%;
   background-color: #2196f3;
   transition: 0.5s;
+}
+
+#worksSection {
+  background-color: #ececec;
+  isolation: isolate;
+}
+#worksSection .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+#worksSection .works-image {
+  flex-basis: calc(40% - 30px);
+  text-align: center;
+}
+@media (max-width: 992px) {
+  #worksSection .works-image {
+    flex-basis: 100%;
+  }
+}
+#worksSection .cards-container {
+  flex-basis: calc(57% - 30px);
+}
+@media (max-width: 992px) {
+  #worksSection .cards-container {
+    flex-basis: 100%;
+  }
+}
+#worksSection .cards-container .card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  background-color: #f6f5f5;
+  margin: 1em 0;
+  padding: 1em;
+  border: 2px solid #fff;
+  border-radius: 7px;
+}
+@media (max-width: 575px) {
+  #worksSection .cards-container .card {
+    gap: 15px;
+  }
+}
+#worksSection .cards-container .card::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  top: 50%;
+  background-color: #ececec;
+  transition: all 0.3s;
+  z-index: -1;
+}
+#worksSection .cards-container .card .image {
+  max-width: 65px;
+}
+#worksSection .cards-container .card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 150%;
+}
+#worksSection .cards-container .card:hover::before {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }/*# sourceMappingURL=index.css.map */

@@ -72,6 +72,9 @@ p {
         text-align: center;
         margin: auto;
         transition: all 0.5s;
+        @media (max-width: 575px) {
+            font-size: 1.8em;
+        }
         &::before {
             content: "";
             position: absolute;

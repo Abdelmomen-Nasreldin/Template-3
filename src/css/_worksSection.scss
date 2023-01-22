@@ -1,0 +1,83 @@
+@use "./shared" as *;
+$gap: 30px;
+$first_color: #d5d5d5;
+$duration: 0.3s;
+
+#worksSection {
+    background-color: #ececec;
+    isolation: isolate;
+
+    .container {
+    }
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: $gap;
+    }
+    .works-image {
+        flex-basis: calc(40% - $gap);
+        text-align: center;
+
+        @media (max-width: 992px) {
+            flex-basis: 100%;
+        }
+        img {
+        }
+    }
+    .cards-container {
+        flex-basis: calc(57% - $gap);
+        @media (max-width: 992px) {
+            flex-basis: 100%;
+        }
+        .card {
+            position: relative;
+            isolation: isolate;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: $gap;
+            background-color: #f6f5f5;
+            margin: 1em 0;
+            padding: 1em;
+            border: 2px solid #fff;
+            border-radius: 7px;
+
+            @media (max-width: 575px) {
+                gap: $gap / 2;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: 50%;
+                top: 50%;
+                background-color: #ececec;
+                transition: all $duration;
+                z-index: -1;
+            }
+            .image {
+                max-width: 65px;
+                
+            }
+            .content {
+            }
+            h3 {
+            }
+            p {
+                @include cutoff_text;
+                line-height: 150%;
+            }
+        }
+        .card:hover {
+            &::before{
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+}
