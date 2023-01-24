@@ -1,4 +1,4 @@
-import '../css/index.css';
+// import '../css/index.css';
 // import '../css/index.scss';
 import "./countDown.js";
 const toggleIcon = document.getElementById("icon");
