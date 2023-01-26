@@ -1,6 +1,10 @@
-// import '../css/index.css';
-// import '../css/index.scss';
+// import * as img from './src/img';
+import '../css/index.scss';
+// import '../css/normalize.css';
 import "./countDown.js";
+// console.log('====================================');
+// console.log(img);
+// console.log('====================================');
 const toggleIcon = document.getElementById("icon");
 const mainNavList = document.getElementById("mainNav");
 const welcomeSection = document.getElementById("welcomeSection");
@@ -66,8 +70,10 @@ function elementDataHandler(ParentElement, source) {
     for (let obj of source) {
         const card = document.importNode(element.content, true);
         obj.imgSrc
-            ? (card.querySelector("img").src = `./src/img/${obj.imgSrc}`)
-            : (card.querySelector("img").src = "./src/img/avatar-01.png");
+            //  (card.querySelector("img").src = `${img}.${obj.imgSrc}`)
+             ?(card.querySelector("img").src = `../src/img/${obj.imgSrc}`)
+            : (card.querySelector("img").src = "../img/gallery-06..png");
+            // (card.querySelector("img").src = `../img/${obj.imgSrc}`)
 
         obj.id
             ? (card.querySelector(".card").id = obj.id)
