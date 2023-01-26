@@ -54,7 +54,7 @@ module.exports = {
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
       new HtmlWebpackPlugin({
-        template: './index.html',
+        template: './src/index.html',
         minify: {
           removeAttributeQuotes: true,
           collapseWhitespace: true,
