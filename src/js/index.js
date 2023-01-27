@@ -1,4 +1,6 @@
 
+import avatar1 from '../img/avatar-01.png';
+
 import data from "./data.js"
 import '../css/index.scss';
 import "./countDown.js";
@@ -34,11 +36,11 @@ const featuresContainer = sectionContainerHandler("featuresSection")
 const testimonialsContainer = sectionContainerHandler("testimonialsSection")
 const teamMembersContainer = sectionContainerHandler("teamMembersSection")
 const myData = JSON.parse(data);
-console.log(myData);
-elementDataHandler(articleContainer, myData[0].article);
-elementDataHandler(featuresContainer, myData[2].features);
-elementDataHandler(testimonialsContainer, myData[3].testimonials);
-elementDataHandler(teamMembersContainer, myData[4].teamMembers);
+
+elementDataHandler(articleContainer, myData.article);
+elementDataHandler(featuresContainer, myData.features);
+elementDataHandler(testimonialsContainer, myData.testimonials);
+elementDataHandler(teamMembersContainer, myData.teamMembers);
 
 function sectionContainerHandler(sectionId) {
     const sectionContainer = document.querySelector(`#${sectionId} .cards-container`)
@@ -51,10 +53,8 @@ function elementDataHandler(ParentElement, source) {
     for (let obj of source) {
         const card = document.importNode(element.content, true);
         obj.imgSrc
-            //  (card.querySelector("img").src = `${img}.${obj.imgSrc}`)
-            ? (card.querySelector("img").src = `../src/img/${obj.imgSrc}`)
-            : (card.querySelector("img").src = "../img/gallery-06.png");
-        // (card.querySelector("img").src = `../img/${obj.imgSrc}`)
+            ? (card.querySelector("img").src = obj.imgSrc)
+            : (card.querySelector("img").src = avatar1);
 
         obj.id
             ? (card.querySelector(".card").id = obj.id)
