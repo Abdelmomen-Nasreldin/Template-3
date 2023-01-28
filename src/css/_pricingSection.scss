@@ -1,0 +1,163 @@
+@use "./shared" as *;
+$gap: 30px;
+$color: #2196f3;
+$duration: 0.3s;
+
+#pricingSection {
+    isolation: isolate;
+    background-color: #ececec;
+    .container {
+        // @include section_padding;
+    }
+    .cards-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: $gap;
+    }
+    .card {
+        background: #fff;
+        isolation: isolate;
+        display: flex;
+        flex-direction: column;
+        transition: $duration;
+        // border: 1px solid #ddd;
+        position: relative;
+        box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+        flex-basis: calc(33% - $gap);
+        max-width: 350px;
+        @media (width <= 1200px) {
+            flex-basis: 350px;
+        }
+        @media (width <= 992px) {
+            flex-basis: calc(50% - $gap);
+            max-width: 350px;
+        }
+        @media (width <= 575px) {
+            flex-basis: 100%;
+        }
+        &::before {
+            content: "";
+            background-color: #f6f6f6;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: $duration;
+            width: 0;
+            height: 50%;
+            z-index: -1;
+        }
+        &::after {
+            content: "";
+            background-color: #f6f6f6;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transition: $duration;
+            width: 0;
+            height: 50%;
+            z-index: -1;
+        }
+    }
+    .card:hover {
+        &::before,
+        &::after {
+            width: 100%;
+        }
+    }
+    .plan {
+        text-align: center;
+        h3 {
+            font-weight: bold;
+            margin: 30px 0;
+            font-size: 25px;
+            letter-spacing: -1px;
+        }
+        .image {
+            width: 80px;
+            margin: auto;
+        }
+        .price {
+            h1 {
+                font-size: 4em;
+                margin: 2rem 0 0;
+                color: $main-color;
+            }
+            p {
+                margin: 0;
+            }
+        }
+    }
+    ul {
+        margin: 2rem 0;
+
+        li {
+            padding: 1rem;
+            border-top: 1px solid #eee;
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                content: "\f00c";
+                font-weight: bolder;
+                color: $main-color;
+                margin-right: 10px;
+            }
+        }
+    }
+    button {
+        border-radius: 7px;
+        border: 1px solid $main-color;
+        color: $main-color;
+        width: fit-content;
+        padding: 1rem 2rem;
+        background-color: transparent;
+        margin: 0 auto 2rem;
+        font-weight: 800;
+        transition: $duration;
+        letter-spacing: 1px;
+        &:hover {
+            color: #fff;
+            background-color: $main-color;
+        }
+    }
+
+    #popular {
+        position: relative;
+        @media (width > 1200.98px) {
+           transform: translateY(-1rem);
+        }
+        #most-popular {
+            position: absolute;
+            top: 0;
+            right: 1rem;
+            writing-mode: vertical-rl;
+            background-color: $main-color;
+            color: #fff;
+            padding: 1rem 0.5rem;
+            &::before {
+                content: "";
+                background-color: $main-color;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 25px;
+                -webkit-clip-path: polygon(
+                    50% 0%,
+                    100% 0,
+                    100% 100%,
+                    50% 20%,
+                    0 100%,
+                    0 0
+                );
+                clip-path: polygon(
+                    50% 0%,
+                    100% 0,
+                    100% 100%,
+                    50% 20%,
+                    0 100%,
+                    0 0
+                );
+            }
+        }
+    }
+}

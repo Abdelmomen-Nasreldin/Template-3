@@ -10,8 +10,12 @@ $gap: 40px;
     .cards-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+        justify-content: center;
         gap: $gap;
         margin-top: 75px;
+        @media (width <= 575px) {
+            grid-template-columns: repeat(auto-fit, 100%);
+        }
     }
     .card {
         position: relative;
