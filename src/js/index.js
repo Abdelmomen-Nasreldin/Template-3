@@ -1,5 +1,5 @@
 
-import avatar1 from '../img/avatar-01.png';
+import avatar1 from '../img/avatar-01.webp';
 
 import data from "./data.js"
 import '../css/index.scss';

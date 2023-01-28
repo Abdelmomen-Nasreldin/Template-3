@@ -39,7 +39,7 @@ module.exports = {
         }]
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|webp)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -47,7 +47,8 @@ module.exports = {
               esModule: false,
               name: 'img/[name].[contenthash].[ext]',
             }
-          }
+          },
+          
         ]
       }
     ]
@@ -65,6 +66,19 @@ module.exports = {
       }),
       new CssMinimizerPlugin(),
       new TerserPlugin()
-    ]
-    
+    ],
+    optimization: {
+      minimizer: [
+        new ImageMinimizerPlugin({
+          minimizer: {
+            implementation: ImageMinimizerPlugin.imageminMinify,
+            options: {
+              plugins: [
+                ['mozjpeg', { quality: 70 }]              
+              ],
+            },
+          },
+        }),
+      ],
+    },
 }
