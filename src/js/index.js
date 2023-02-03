@@ -1,9 +1,9 @@
+import avatar1 from "../img/avatar-01.webp";
 
-import avatar1 from '../img/avatar-01.webp';
-
-import data from "./data.js"
-import '../css/index.scss';
-import "./countDown.js";
+import data from "./data.js";
+import "../css/index.scss";
+import "./countDown";
+import "./statsScroll";
 
 const toggleIcon = document.getElementById("icon");
 const mainNavList = document.getElementById("mainNav");
@@ -31,10 +31,10 @@ function hideMegaMenu() {
 function hideNavMenu() {
     mainNavList.classList.remove("show");
 }
-const articleContainer = sectionContainerHandler("articleSection")
-const featuresContainer = sectionContainerHandler("featuresSection")
-const testimonialsContainer = sectionContainerHandler("testimonialsSection")
-const teamMembersContainer = sectionContainerHandler("teamMembersSection")
+const articleContainer = sectionContainerHandler("articleSection");
+const featuresContainer = sectionContainerHandler("featuresSection");
+const testimonialsContainer = sectionContainerHandler("testimonialsSection");
+const teamMembersContainer = sectionContainerHandler("teamMembersSection");
 const myData = JSON.parse(data);
 
 elementDataHandler(articleContainer, myData.article);
@@ -43,8 +43,10 @@ elementDataHandler(testimonialsContainer, myData.testimonials);
 elementDataHandler(teamMembersContainer, myData.teamMembers);
 
 function sectionContainerHandler(sectionId) {
-    const sectionContainer = document.querySelector(`#${sectionId} .cards-container`)
-    return sectionContainer
+    const sectionContainer = document.querySelector(
+        `#${sectionId} .cards-container`
+    );
+    return sectionContainer;
 }
 
 function elementDataHandler(ParentElement, source) {
@@ -76,12 +78,15 @@ function elementDataHandler(ParentElement, source) {
 
 // progressBarValues in skills section
 const skillsSection = document.querySelector("#skillsSection");
-const progressBarValues = document.querySelectorAll("#skillsSection .progress-value");
+const progressBarValues = document.querySelectorAll(
+    "#skillsSection .progress-value"
+);
 const skills = document.querySelectorAll("#skillsSection h3");
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
     if (window.scrollY >= skillsSection.offsetTop - 100) {
         for (let i = 0; i < skills.length; i++) {
             progressBarValues[i].style.width = skills[i].dataset.percent;
         }
     }
-})
+});
+

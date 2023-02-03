@@ -1,0 +1,95 @@
+@use "./shared" as *;
+@use "sass:math";
+$gap: 20px;
+$first_color: #d5d5d5;
+$duration: 0.6s;
+
+#statsSection {
+    isolation: isolate;
+    // background-color: #ececec;
+    background-color: #ececec9e;
+    background-image: url("../img/stats.webp");
+    .container {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0%;
+            top: 0%;
+            // background-color: #ececec;
+            // background-image: url("../img/stats.webp");
+
+            transition: all $duration;
+            z-index: -1;
+        }
+    }
+
+    .cards-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: $gap;
+        .card {
+            position: relative;
+            isolation: isolate;
+            flex-basis: calc(25% - $gap);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: $gap;
+            background-color: #fff;
+            padding: 1em;
+            filter: opacity(0.8);
+            @media (max-width: 992px) {
+                flex-basis: 270px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 3px;
+                height: 0;
+                left: 0%;
+                bottom: 0;
+                background-color: $main-color;
+                transition: all $duration;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                width: 3px;
+                height: 0;
+                right: 0%;
+                top: 0;
+                background-color: $main-color;
+                transition: all $duration;
+            }
+            i {
+                font-size: 2em;
+            }
+            h3 {
+                font-size: 3em;
+                margin: 0;
+            }
+            span {
+                color: $main-color;
+                font-style: italic;
+                font-weight: 700;
+                font-size: 1.2em;
+            }
+        }
+        .card:hover {
+            filter: opacity(1);
+
+            &::before {
+                height: 100%;
+            }
+            &::after {
+                height: 100%;
+            }
+        }
+    }
+}
