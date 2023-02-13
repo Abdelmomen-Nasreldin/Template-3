@@ -1,5 +1,9 @@
 @use "./shared" as *;
 @use "sass:math";
+// @import '../img/stats.jpg';
+// @import avatar1 from "../img/stats.webp";
+
+
 $gap: 20px;
 $first_color: #d5d5d5;
 $duration: 0.6s;
@@ -8,9 +12,11 @@ $duration: 0.6s;
     isolation: isolate;
     // background-color: #ececec;
     background-color: #ececec9e;
-    background-image: url("../img/stats.webp");
+    background-image: url('../img/discount.png');
+    background-size: cover;
     .container {
         position: relative;
+        
         &::before {
             content: "";
             position: absolute;

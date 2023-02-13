@@ -1,0 +1,117 @@
+@use "./shared" as *;
+@use "sass:math";
+@use "./form" as *;
+// @import avatar1 from "../img/stats.webp";
+$gap: 20px;
+$first_color: #d5d5d5;
+$duration: 0.6s;
+
+#contactSection {
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    @media (max-width: 575px) {
+        grid-template-columns: 100%;
+    }
+    // display: flex;
+    //     justify-content: center;
+    //     flex-wrap: wrap;
+    .container {
+        max-width: 600px;
+        height: 100vh;
+        min-height: 530px;
+        max-height: 1050px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h2 {
+        font-size: 2.5em;
+        text-align: center;
+    }
+    .haveDiscount {
+        background-color: #1883d9;
+        color: #fff;
+        text-align: center;
+
+        p {
+            color: #fff;
+            font-size: 1.125em;
+            line-height: 150%;
+        }
+        img {
+            max-height: 50vh;
+        }
+    }
+    .requestDiscount {
+        background-color: #fff;
+        .container {
+            justify-content: center;
+        }
+
+        textarea {
+            width: 100%;
+            height: 20vh;
+            max-height: 300px;
+            min-height: 100px;
+            resize: none;
+        }
+    }
+    // submit button ////////
+
+    button {
+        font-family: inherit;
+        font-size: 20px;
+        background: #1883d9;
+        color: white;
+        padding: 0.7em 1em;
+        padding-left: 0.9em;
+        display: flex;
+        align-items: center;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.2s;
+        width: 100%;
+    }
+
+    button span {
+        display: block;
+        // margin-left: 0.3em;
+        transition: all 0.3s ease-in-out;
+        margin-inline: calc(50% - 24px * 2);
+    }
+
+    button svg {
+        display: block;
+        transform-origin: center center;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    button:hover .svg-wrapper {
+        animation: fly-1 0.6s ease-in-out infinite alternate;
+    }
+
+    button:hover svg {
+        transform: translateX(1.2em) rotate(45deg) scale(1.1);
+    }
+
+    //   button:hover span {
+    //     transform: translateX(5em);
+    //   }
+
+    button:active {
+        transform: scale(0.95);
+    }
+
+    @keyframes fly-1 {
+        from {
+            transform: translateY(0.1em);
+        }
+
+        to {
+            transform: translateY(-0.1em);
+        }
+    }
+}

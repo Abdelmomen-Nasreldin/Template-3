@@ -8,6 +8,7 @@
     "start": "webpack serve --config webpack.dev.js",
     "format": "prettier --write \"**/*.js\""
   },
+  "browserslist": "> 0.25%, not dead",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Abdelmomen-Nasreldin/Template-3.git"
@@ -30,6 +31,7 @@
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "image-minimizer-webpack-plugin": "^3.8.1",
+    "image-webpack-loader": "^8.1.0",
     "imagemin": "^8.0.1",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
@@ -44,6 +46,7 @@
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.6",
+    "url-loader": "^4.1.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
@@ -52,7 +55,9 @@
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "autoprefixer": "10.4.5",
+    "core-js": "^3.27.2",
     "font-awesome": "^4.7.0",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "regenerator-runtime": "^0.13.11"
   }
 }

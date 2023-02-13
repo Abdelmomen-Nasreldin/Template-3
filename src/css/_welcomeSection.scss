@@ -4,6 +4,8 @@ section#welcomeSection {
     position: relative;
     // text-align: center;
     height: calc(100vh - 60px);
+    max-height: 1000px;
+    min-height: 280px;
 
     &::before {
         content: "";
